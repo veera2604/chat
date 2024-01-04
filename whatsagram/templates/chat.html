@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%load static%}
+    {% load bootstrap4 %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("{%static 'alone.jpg'%}");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <form method="POST" action="{%url 'chat'%}">
+        {%csrf_token%}
+    
+    <table>
+        <tr>
+            <td>
+                <div style="margin-left: 200px;">
+                    <textarea id="chat" style="height: 300px;">{{Msg2}}</textarea><br>
+                    <input type="text" id="chat" name="chat1"><br>
+                    <button type='submit' class="btn btn-success">SEND</button>
+                </div>
+            </td>
+            
+            <td>
+                <div style="margin-left: 100px; margin-top: 8px;">
+                    <textarea id='chat2' style="height: 300px;color:blue">{{Msg}}</textarea><br>
+                    <input type="text" id="chat2" name="chat2"><br>
+                    <button type='submit' class="btn btn-success">SEND</button>
+                   
+                </div>
+            </td>
+        </tr>
+    </table>
+    
+    </form>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
