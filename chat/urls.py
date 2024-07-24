@@ -21,7 +21,7 @@ from whatsagram import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.Home,name="Home"),
-    path('chat/',views.chat,name="chat"),
+    path('msg/',views.chat,name="chat"),
     path('vid/',views.vid,name="vid"),
     path('video/<int:video_id>/', views.video_detail, name='video_detail'),
 
